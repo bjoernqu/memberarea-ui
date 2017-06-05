@@ -16,36 +16,29 @@
       <table class="ui celled striped table">
         <thead>
           <tr>
-            <th colspan="2">Details</th>
+            <th colspan="4">Details</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Erstellt</td>
-            <td>Am {{moment-format wi.created_at 'DD.MM.YYYY'}} von {{wi.created_by.display_name}}</td>
+            <td style="width: 20%">Erstellt</td>
+            <td colspan="3">Am {{moment-format wi.created_at 'DD.MM.YYYY'}} von {{wi.created_by.display_name}}</td>
           </tr>
           <tr>
             <td>Fällig am</td>
-            <td>{{moment-format wi.due_at 'DD.MM.YYYY'}}</td>
-          </tr>
-          <tr>
-            <td class="top aligned collapsing">Zugewiesen an</td>
-            <td>
-              {{#each wi.assignments as |assi|}}
-                <span class="ui image label"><i class="user icon"></i>{{assi.assignee.display_name}}</span>
-              {{/each}}
-            </td>
+            <td colspan="3">{{moment-format wi.due_at 'DD.MM.YYYY'}}</td>
           </tr>
           <tr>
             <td>Tags</td>
-            <td>
+            <td colspan="3">
               {{#each wi.tags as |tag|}}
-                <div class="ui tag label">{{tag.name}}</div>
+                <div class="ui tag label" style="margin-bottom: 6px;">{{tag.name}}</div>
               {{/each}}
             </td>
           </tr>
         </tbody>
       </table>
+      {{workitem-assignment-table assignments=wi.assignments}}
     {{/if}}
   </div>
 </div>

@@ -55,10 +55,13 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
               id: 73,
               display_name: 'Theo Schmied'
             },
-            duration_real: null,
-            done_at: null,
+            duration_real: 90,
+            done_at: '2017-07-09',
             verified_at: null,
-            verified_by: null,
+            verified_by: {
+              id: 89,
+              display_name: 'Theo Wagner'
+            },
             workitem: {
               id: 3,
               title: 'New Workitem'
@@ -112,7 +115,49 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           id: 45,
           display_name: 'Max Mann'
         },
-        tags: [],
+        tags: [
+          {
+            id: 1,
+            name: 'Tag 1'
+          },
+          {
+            id: 2,
+            name: 'Tag 2'
+          },
+          {
+            id: 3,
+            name: 'Tag 3'
+          },
+          {
+            id: 4,
+            name: 'Tag 4'
+          },
+          {
+            id: 5,
+            name: 'Tag 5'
+          },
+
+          {
+            id: 6,
+            name: 'Tag 6'
+          },
+          {
+            id: 7,
+            name: 'Tag 7'
+          },
+          {
+            id: 8,
+            name: 'Tag 8'
+          },
+          {
+            id: 9,
+            name: 'Tag 9'
+          },
+          {
+            id: 10,
+            name: 'Tag 10'
+          }
+        ],
         assignments: []
       },
       {

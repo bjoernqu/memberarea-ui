@@ -1,0 +1,53 @@
+{{#if assignments.length}}
+  <table class="ui celled striped table">
+    <thead>
+      <tr>
+        <th colspan="1">
+          Zuweisungen</th>
+        <th colspan="4" class="right aligned">
+          {{#if expanded}}
+            <div {{action 'toggleExpanded' on 'onclick'}}><i class="angle down icon"></i></div>
+          {{else}}
+            <div {{action 'toggleExpanded' on 'onclick'}}><i class="angle left icon"></i></div>
+          {{/if}}
+        </th>
+      </tr>
+      <tr>
+        <th colspan="1" style="width: 20%"></th>
+        <th colspan="1" style="width: 15%">Erledigt</th>
+        <th colspan="1" style="width: 15%">Arbeitszeit</th>
+        <th colspan="1" style="width: 15%">Verifiziert</th>
+        <th colspan="1">von</th>
+      </tr>
+    </thead>
+    {{#if expanded}}
+      <tbody>
+        {{#each assignments as |assi|}}
+          <tr>
+            <td>
+              {{assi.assignee.display_name}}
+            </td>
+            <td>
+              {{#if assi.done_at}}
+                <i class="large green checkmark icon"></i>
+              {{else}}
+                <i class="large red remove  icon"></i>
+              {{/if}}
+            </td>
+            <td>{{assi.duration_real}}</td>
+            <td>
+              {{#if assi.verified_by}}
+                <i class="large green checkmark icon"></i>
+              {{else}}
+                <i class="large red remove  icon"></i>
+              {{/if}}
+            </td>
+            <td>
+              {{#if assi.verified_by}} {{assi.verified_by.display_name}} {{/if}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    {{/if}}
+  </table>
+{{/if}}
