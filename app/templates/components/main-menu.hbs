@@ -1,0 +1,15 @@
+<div class="ui secondary pointing menu">
+  <div class="ui container">
+    {{link-to "ÜRC Mitgliederbereich" "index" class="header item" activeClass=""}}
+    {{link-to "Arbeitsstunden" "workitem" class="item"}}
+    {{link-to "Fahrtenbuch" "logbook" class="item"}}
+    {{#if session.isAuthenticated}}
+      <div class="right menu">
+        {{link-to "Profil" "profile" class="item"}}
+        <a class="item" {{action 'invalidateSession'}}>Logout</a>
+      </div>
+    {{else}}
+      {{link-to "Login" "login" class="right item"}}
+    {{/if}}
+  </div>
+</div>

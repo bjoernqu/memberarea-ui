@@ -1,0 +1,51 @@
+<div class="ui card centered" style="width: 70%">
+  <div class="content">
+    <div class="header">{{wi.title}}</div>
+    <div class="meta">
+      <span>Arbeitszeit: {{wi.duration_expected}} min</span>
+      <span>Teilnehmer (max): {{wi.assignments.length}} ({{wi.max_assignees}})</span>
+    </div>
+    {{#if expanded}}
+      <div class="ui top right attached label" {{action 'toggleExpanded' on 'onclick'}}><i class="angle down icon"></i></div>
+    {{else}}
+      <div class="ui top right attached label" {{action 'toggleExpanded' on 'onclick'}}><i class="angle left icon"></i></div>
+    {{/if}}
+
+    {{#if expanded}}
+      <p style="margin-top: 1em;">{{wi.description}}</p>
+      <table class="ui celled striped table">
+        <thead>
+          <tr>
+            <th colspan="2">Daten</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Erstellt</td>
+            <td>Am {{moment-format wi.created_at 'DD.MM.YYYY'}} von {{wi.created_by.display_name}}</td>
+          </tr>
+          <tr>
+            <td>Fällig am</td>
+            <td>{{moment-format wi.due_at 'DD.MM.YYYY'}}</td>
+          </tr>
+          <tr>
+            <td class="top aligned collapsing">Teilnehmer</td>
+            <td>
+              {{#each wi.assignments as |assi|}}
+                <span class="ui image label"><i class="user icon"></i>{{assi.assignee.display_name}}</span>
+              {{/each}}
+            </td>
+          </tr>
+          <tr>
+            <td>Tags</td>
+            <td>
+              {{#each wi.tags as |tag|}}
+                <div class="ui tag label">{{tag.name}}</div>
+              {{/each}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    {{/if}}
+  </div>
+</div>

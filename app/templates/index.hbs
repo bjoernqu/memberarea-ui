@@ -1,0 +1,8 @@
+{{#if session.isAuthenticated}}
+  <h1>Wilkommen {{session.data.authenticated.user.username}} mit der ID: {{session.data.authenticated.user.userid}}!</h1>
+{{/if}}
+<p>Hier befindet sich die Arbeitsstundenverwaltung und später Stats zum Fahrtenbuch.</p>
+{{#if session.isAuthenticated}}
+{{else}}
+<p>Bitte einloggen</p>
+{{/if}}
