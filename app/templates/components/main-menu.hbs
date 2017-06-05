@@ -1,7 +1,6 @@
 <div class="ui secondary pointing menu">
   <div class="ui container">
-    {{link-to "ÜRC Mitgliederbereich" "index" class="header item" activeClass=""}}
-    {{link-to "Arbeitsstunden" "workitem" class="item"}}
+    {{link-to "ÜRC Mitgliederbereich" "index" class="header item" activeClass=""}} {{link-to "Arbeitsstunden" "workitem" class="item"}}
     {{link-to "Fahrtenbuch" "logbook" class="item"}}
     {{#if session.isAuthenticated}}
       <div class="right menu">

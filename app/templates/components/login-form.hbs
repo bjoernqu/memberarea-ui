@@ -2,19 +2,17 @@
   <div class="column" style="max-width: 450px;">
     <form class="ui large form" {{action "login" on="submit"}}>
       <div class="ui segment">
-	<div class="field">
-	  <div class="ui left icon input" name="divUser">
-	    <i class="user icon"></i>
-	    {{input value=username type="text" placeholder="Benutzername"}}
-	  </div>
-	</div>
-	<div class="field">
-	  <div class="ui left icon input" name="divPass">
-	    <i class="lock icon"></i>
-	    {{input value=password type="password" placeholder="Password"}}
-	  </div>
-	</div>
-	<button class="ui primary button fluid large submit" type="submit" disabled={{isProcessing}}>Login</button>
+        <div class="field">
+          <div class="ui left icon input" name="divUser">
+            <i class="user icon"></i> {{input value=username type="text" placeholder="Benutzername"}}
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input" name="divPass">
+            <i class="lock icon"></i> {{input value=password type="password" placeholder="Password"}}
+          </div>
+        </div>
+        <button class="ui primary button fluid large submit" type="submit" disabled= {{isProcessing}}>Login</button>
       </div>
       {{#if loginFailed}}
         <div class="ui error message visible">{{errorMessage}}</div>

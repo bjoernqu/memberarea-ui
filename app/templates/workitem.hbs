@@ -1,2 +1,4 @@
 {{outlet}}
-{{workitem-card}}
+{{#each model as |item|}}
+  {{workitem-card wi=item}}
+{{/each}}

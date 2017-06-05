@@ -1,9 +1,9 @@
-<div class="ui card centered" style="width: 70%">
+<div class="ui card centered" style="width: 70%; margin-bottom: 1em;">
   <div class="content">
     <div class="header">{{wi.title}}</div>
     <div class="meta">
       <span>Arbeitszeit: {{wi.duration_expected}} min</span>
-      <span>Teilnehmer (max): {{wi.assignments.length}} ({{wi.max_assignees}})</span>
+      <span>Zugewiesen an (max): {{wi.assignments.length}} ({{wi.max_assignees}})</span>
     </div>
     {{#if expanded}}
       <div class="ui top right attached label" {{action 'toggleExpanded' on 'onclick'}}><i class="angle down icon"></i></div>
@@ -16,7 +16,7 @@
       <table class="ui celled striped table">
         <thead>
           <tr>
-            <th colspan="2">Daten</th>
+            <th colspan="2">Details</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@
             <td>{{moment-format wi.due_at 'DD.MM.YYYY'}}</td>
           </tr>
           <tr>
-            <td class="top aligned collapsing">Teilnehmer</td>
+            <td class="top aligned collapsing">Zugewiesen an</td>
             <td>
               {{#each wi.assignments as |assi|}}
                 <span class="ui image label"><i class="user icon"></i>{{assi.assignee.display_name}}</span>
