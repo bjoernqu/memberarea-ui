@@ -1,9 +1,15 @@
-<div class="ui secondary pointing menu">
-  <div class="ui container">
+<div class="ui container">
+  <div class="ui menu">
     {{link-to "ÜRC Mitgliederbereich" "index" class="header item" activeClass=""}} {{link-to "Arbeitsstunden" "workitem" class="item"}}
     {{link-to "Fahrtenbuch" "logbook" class="item"}}
     {{#if session.isAuthenticated}}
       <div class="right menu">
+        {{#ui-dropdown class="ui link dropdown item" }}
+          Admin <i class="dropdown icon"></i>
+          <div class="menu">
+            {{link-to "Tags" "admin.tags" class="item"}}
+          </div>
+        {{/ui-dropdown}}
         {{link-to "Profil" "profile" class="item"}}
         <a class="item" {{action 'invalidateSession'}}>Logout</a>
       </div>

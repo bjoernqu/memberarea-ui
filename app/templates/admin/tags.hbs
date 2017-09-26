@@ -1,0 +1,17 @@
+<div class="ui container centered" style="width: 70%;">
+  <div class="ui tiny button">Tag anlegen</div>
+  <div class="ui container" style="margin-top: 2em;">Vorhandene Tags:</div>
+  <div class="ui middle aligned divided list">
+    {{#each model as |tag|}}
+      <div class="item">
+        <div class="right floated content">
+          <div class="ui tiny button">Bearbeiten</div>
+          <div class="ui tiny button">Löschen</div>
+        </div>
+        <div class="content">
+          <div class="ui tag label" style="margin-bottom: 6px;">{{tag.name}}</div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

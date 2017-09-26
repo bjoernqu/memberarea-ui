@@ -13,6 +13,10 @@ Router.map(function() {
   });
   this.route('logbook');
   this.route('workitem');
+
+  this.route('admin', function() {
+    this.route('tags');
+  });
 });
 
 export default Router;
