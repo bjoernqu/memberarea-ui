@@ -9,7 +9,7 @@ const JSON_CONTENT_TYPE = 'application/json';
 
 export default BaseAuthenticator.extend({
 
-  serverLoginEndpoint: '/api/users/login',
+  serverLoginEndpoint: '/auth',
   serverCheckEndpoint: '/api/users/checkSession',
 
 

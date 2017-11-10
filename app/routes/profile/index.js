@@ -11,7 +11,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     var session = this.get('session');
     var user = session.get('data.authenticated.user');
 
-    let url = '/api/user/';
+    let url = '/auth/';
     let requestOptions = {};
     assign(requestOptions, {
       method: 'GET',
